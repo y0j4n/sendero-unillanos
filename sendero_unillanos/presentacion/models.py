@@ -21,6 +21,7 @@ class Presentacion(SingletonModel):
     parrafo_seccion2 = models.CharField(max_length=500)
     img_seccion2 = models.ImageField(blank=True, null=True)
     banner = models.ImageField(blank=True, null=True)
+    mapa = models.ImageField(blank=True, null=True)
 
     class Meta:
         verbose_name = 'Presentacion'
