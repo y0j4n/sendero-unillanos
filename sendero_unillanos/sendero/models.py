@@ -6,6 +6,7 @@ from singleton_model import SingletonModel
 
 class Sendero(SingletonModel):
     titulo = models.CharField(max_length=500)
+    banner = models.ImageField(null=True, blank=True)
     subtitulo_seccion1 = models.CharField(max_length=500)
     parrafo_seccion1 = models.CharField(max_length=500)
     img_seccion1 = models.ImageField()

@@ -14,11 +14,9 @@
 
     <!-- Bootstrap -->
     <link href="static/css/bootstrap.min.css" rel="stylesheet">
-
     <link href="static/css/fontawesome.css" rel="stylesheet">
     <link href="static/css/themify-icons.css" rel="stylesheet">
     <link href="static/css/magnific-popup.css" rel="stylesheet">
-
     <link href="static/css/animate.css" rel="stylesheet">
     <link href="static/css/owl.carousel.min.css" rel="stylesheet">
 
@@ -66,9 +64,10 @@
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item "><a class="nav-link" href="/">Presentacion Del Proyecto</a></li>
                                 <li class="nav-item "><a class="nav-link" href="/educacion">Educacion Ambiental</a></li>
-                                <li class="nav-item "><a class="nav-link" href="/campus">Campus Universitario</a></li>
+                                <li class="nav-item active"><a class="nav-link" href="/campus">Campus Universitario</a>
+                                </li>
                                 <li class="nav-item "><a class="nav-link" href="/sendero">Sendero</a></li>
-                                <li class="nav-item active"><a class="nav-link" href="/galeria">Galería</a></li>
+                                <li class="nav-item"><a class="nav-link" href="/galeria">Galería</a></li>
                                 <li class="nav-item"><a class="nav-link" href="/contacto">Contacto</a></li>
                             </ul>
                         </div>
@@ -80,102 +79,44 @@
 {% endfor %}
 
 <!-- Header Area -->
-{% for educacion in educaciones %}
 
-    <!--Custom Hero Area-->
-    <section class="custom-hero dark-overlay" style="background: url({{ educacion.banner.url }}) no-repeat">
-    </section>
-
-    <!--/Custom Hero Area-->
-
-    <!--Listing Details Area-->
-    <section class="listing-details-area section-padding">
+<!--Custom Hero Area-->
+{% for campus in instalaciones %}
+    <section class="custom-hero dark-overlay" style="background: url({{ campus.banner.url }}) no-repeat">
         <div class="container">
-            <div class="row mb-30">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="single-listing-gallary">
-                        <a class="popup-gallery" href="{{ educacion.img1_seccion1.url }}">
-                            <img src="{{ educacion.img1_seccion1.url }}" alt="">
-                            <i class="fas fa-search"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="single-listing-gallary">
-                        <a class="popup-gallery" href="{{ educacion.img2_seccion1.url }}">
-                            <img src="{{ educacion.img2_seccion1.url }}" alt="">
-                            <i class="fas fa-search"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="single-listing-gallary">
-                        <a class="popup-gallery" href="{{ educacion.img3_seccion1.url }}">
-                            <img src="{{ educacion.img3_seccion1.url }}" alt="">
-                            <i class="fas fa-search"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <div class="listing-details-content">
-                        <h2 class="cl-black">{{ educacion.titulo_seccion1 }}</h2>
-                        <p>{{ educacion.parrafo_seccion1 }}<br>
+            <div class="row cl-white">
+                <div class="col-lg-12 col-md-6" style="text-align: center;">
+                    <div class="custom-hero-title">
+                        <h2>{{ campus.titulo }}</h2>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+{% endfor %}
+<!--/Custom Hero Area-->
 
+{% for campus in instalaciones %}
+    <!--Campus Area-->
     <section class="notfound-area section-padding">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 col-md-6 col-sm-12 col-xs-12">
-                    <div class="notfound-content">
-                        <h2 class="section-title mb-30 cl-black">{{ educacion.titulo_seccion2 }}</h2>
-                        <p class="mb-40">{{ educacion.parrafo1_seccion2 }}</p>
-                    </div>
-                </div>
-                <div class="col-lg-12 col-md-12">
-                    <p>{{ educacion.parrafo2_seccion2 }}<br>
-                        <br>
-                        <img src="{{ educacion.img_seccion2.url }}" alt=""/>
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="notfound-area section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <div class="notfound-content">
-                        <h2 class="section-title mb-30 cl-black">{{ educacion.titulo_seccion3 }}</h2>
-                        <p class="mb-40">{{ educacion.parrafo_seccion3 }}</p>
-                        <p class="mb-40">{{ educacion.parrafo2_seccion3 }}</p>
-                    </div>
-                </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="notfound-img">
-                        <iframe width="550" height="400" src="https://www.youtube.com/embed/_7XMZ-nxiJY" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
+                        <img src="{{ campus.img_seccion1.url }}" alt=""/>
                     </div>
                 </div>
-                <div class="col-lg-12 col-md-12">
-                    <br>
-                    <br>
-                    <img src="{{ educacion.img_seccion3.url }}" alt=""/>
-
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="notfound-content">
+                        <h2 class="section-title mb-30 cl-black">{{ campus.titulo_seccion1 }}</h2>
+                        <p class="mb-40">{{ campus.parrafo_seccion1 }}</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
+    <!--/Campus Area-->
 {% endfor %}
-
-<!--/Listing Details Area-->
 
 <!--Footer Area-->
 {% for contacto in contactenos %}
@@ -227,7 +168,6 @@
         </div>
     </footer>
 {% endfor %}
-
 <div class="copyright-text">
     <div class="container">
         <div class="row justify-content-center">
@@ -247,10 +187,7 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="static/js/popper.js"></script>
 <script src="static/js/bootstrap.min.js"></script>
-
 <script src="static/js/owl.carousel.min.js"></script>
-
-
 <script src="static/js/waypoints.min.js"></script>
 <script src="static/js/jquery.counterup.min.js"></script>
 <script src="static/js/magnific-popup.min.js"></script>
