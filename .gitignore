@@ -9,3 +9,5 @@ sendero_unillanos/db.sqlite3
 .idea/
 
 __pycache__/
+
+sendero_unillanos/sendero_unillanos/db.sqlite3
