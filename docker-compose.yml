@@ -23,8 +23,8 @@ services:
     image: nginx:1.17-alpine
     restart: unless-stopped
     volumes:
-      - ./sendero_unillanos/static:/static
-      - ./sendero_unillanos/media:/media
+      - ./sendero_unillanos/sendero_unillanos/static:/static
+      - ./sendero_unillanos/sendero_unillanos/media:/media
       - ./nginx/dev.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - web

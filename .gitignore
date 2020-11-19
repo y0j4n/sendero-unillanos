@@ -11,3 +11,5 @@ sendero_unillanos/db.sqlite3
 __pycache__/
 
 sendero_unillanos/sendero_unillanos/db.sqlite3
+
+sendero_unillanos/sendero_unillanos/static/
