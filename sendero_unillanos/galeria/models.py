@@ -54,10 +54,12 @@ class Fotos(models.Model):
 
 class Galeria(SingletonModel):
     titulo = models.CharField(max_length=250)
+    banner = models.ImageField(blank=True, null=True)
     flora = models.ForeignKey(Flora, on_delete=models.CASCADE)
     fauna = models.ForeignKey(Fauna, on_delete=models.CASCADE)
     videos = models.ForeignKey(Videos, on_delete=models.CASCADE)
     fotos = models.ForeignKey(Fotos, on_delete=models.CASCADE)
+
 
     class Meta:
         verbose_name = 'Galeria'

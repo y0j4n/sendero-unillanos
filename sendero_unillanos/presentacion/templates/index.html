@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        {% for presentacion in presentaciones %}
+		<link rel="shortcut icon" href="{{presentacion.icono_de_la_pagina.url}}" type="image/x-icon">
+		<link rel="icon" href="{{presentacion.icono_de_la_pagina.url}}" type="image/x-icon">
+        
+        <title>{{ presentacion.titulo_de_la_pagina }}</title>
+        {% endfor %}
+
+        <!-- Bootstrap -->
+        <link href="static/css/bootstrap.min.css" rel="stylesheet">
+		
+        <link href="static/css/fontawesome.css" rel="stylesheet">
+        <link href="static/css/themify-icons.css" rel="stylesheet">
+        <link href="static/css/magnific-popup.css" rel="stylesheet">
+		
+        <link href="static/css/animate.css" rel="stylesheet">
+        <link href="static/css/owl.carousel.min.css" rel="stylesheet">
+    
+        
+        <!-- Main css -->
+        <link href="static/css/main.css" rel="stylesheet">
+		
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+	
+    <body>
+
+    	<!-- Preloader -->
+		<div class="preloader">
+			<div class="spinner">
+			   <span class="spinner-rotate"></span>
+			</div>
+		</div>
+        <!-- /Preloader -->
+        <!-- Header Area -->
+        {% for presentacion in presentaciones %}
+
+        <header class="main_menu_area">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <a class="navbar-brand" href="index.html"><img src="{{ presentacion.logo_de_la_pagina.url }}" alt=""></a>
+                            <div class="mobile_toggle">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                        aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active"><a class="nav-link" href="/">Presentacion Del Proyecto</a></li>
+                                <li class="nav-item "><a class="nav-link" href="/educacion">Educacion Ambiental</a></li>
+                                <li class="nav-item "><a class="nav-link" href="/">Campus Universitario</a></li>
+                                <li class="nav-item "><a class="nav-link" href="/sendero">Sendero</a></li>
+                                <li class="nav-item"><a class="nav-link" href="/galeria">Galería</a></li>
+                                <li class="nav-item"><a class="nav-link" href="/contacto">Contacto</a></li>
+                            </ul>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</div>
+        </header>
+        {% endfor %}
+        <!-- Header Area -->
+		
+		<!--Nelson Area-->
+        {% for presentacion in presentaciones %}
+
+		<section class="hero-area dark-overlay" style="background: url({{ presentacion.banner.url }}) no-repeat" >
+{#			<div class="container">#}
+{#				<div class="row">#}
+{#					<div class="col">#}
+{#						<div class="hero-content cl-white centered">#}
+{#							<h1 class="wow fadeInUp" data-wow-delay="0.3s"><span>Great Places In</span> <br />New York</h1>						#}
+{#						</div>#}
+{#						<div class="listing-search wow fadeInUp" data-wow-delay="0.4s">#}
+{#							<div class="listing-label nav nav-tabs">#}
+{#								<a href="" data-target="#listing" data-toggle="tab" class="active"><span><i class="fa fa-server"></i>Listing</span></a>#}
+{#								<a href="" data-target="#event" data-toggle="tab"><span><i class="fas fa-calendar-alt"></i>Event</span></a>#}
+{#								<a href="" data-target="#real-estate" data-toggle="tab"><span><i class="fa fa-home"></i>Real Estate</span></a>#}
+{#								<a href="" data-target="#location" data-toggle="tab"><span><i class="fas fa-map-marker-alt"></i>Location</span></a>#}
+{#								<a href="" data-target="#job" data-toggle="tab"><span><i class="far fa-building"></i>Job</span></a>#}
+{#								<a href="" data-target="#hotel" data-toggle="tab"><span><i class="fa fa-hotel"></i>Hotel</span></a>#}
+{#								<a href="" data-target="#travel" data-toggle="tab"><span><i class="fa fa-plane"></i>Travel</span></a>#}
+{#								<a href="" data-target="#restaurant" data-toggle="tab"><span><i class="fas fa-utensils"></i>Restaurant</span></a>#}
+{#								<a href="" data-target="#park" data-toggle="tab"><span><i class="fa fa-flag-checkered"></i>Park</span></a>#}
+{#							</div>#}
+{#							<div id="listing" class="listing-form tab-pane fade active show wow fadeInUp" data-wow-delay="0.4s">#}
+{#								<form action="#">#}
+{#									<input type="text" placeholder="Search Listing" required />#}
+{#									<select name="Listselect">#}
+{#										<option value="">Listing</option>#}
+{#										<option value="">Event</option>#}
+{#										<option value="">Real Estate</option>#}
+{#										<option value="">Location</option>#}
+{#										<option value="">Job</option>#}
+{#										<option value="">Hotel</option>#}
+{#										<option value="">Travel</option>#}
+{#										<option value="">Restaurant</option>#}
+{#										<option value="">Park</option>#}
+{#									</select>#}
+{#									<button type="submit">Search</button>#}
+{#								</form>#}
+{#							</div>#}
+{#							<div id="event" class="listing-form tab-pane fade">#}
+{#								<form action="#">#}
+{#									<input type="text" placeholder="Search Event" required />#}
+{#									<select name="Listselect">#}
+{#										<option value="">Event</option>#}
+{#										<option value="">Real Estate</option>#}
+{#										<option value="">Location</option>#}
+{#										<option value="">Job</option>#}
+{#									</select>#}
+{#									<button type="submit">Search</button>#}
+{#								</form>#}
+{#							</div>#}
+{#							<div id="real-estate" class="listing-form tab-pane fade">#}
+{#								<form action="#">#}
+{#									<input type="text" placeholder="Search Real Estate" required />#}
+{#									<select name="Listselect">#}
+{#										<option value="">Real Estate</option>#}
+{#										<option value="">Event</option>#}
+{#										<option value="">Real Estate</option>#}
+{#										<option value="">Location</option>#}
+{#										<option value="">Job</option>#}
+{#										<option value="">Hotel</option>#}
+{#										<option value="">Travel</option>#}
+{#										<option value="">Restaurant</option>#}
+{#										<option value="">Park</option>#}
+{#									</select>#}
+{#									<button type="submit">Search</button>#}
+{#								</form>#}
+{#							</div>#}
+{#							<div id="location" class="listing-form tab-pane fade">#}
+{#								<form action="#">#}
+{#									<input type="text" placeholder="Search Location" required />#}
+{#									<select name="Listselect">#}
+{#										<option value="">Location</option>#}
+{#										<option value="">Event</option>#}
+{#										<option value="">Real Estate</option>#}
+{#										<option value="">Location</option>#}
+{#										<option value="">Job</option>#}
+{#										<option value="">Hotel</option>#}
+{#										<option value="">Travel</option>#}
+{#										<option value="">Restaurant</option>#}
+{#										<option value="">Park</option>#}
+{#									</select>#}
+{#									<button type="submit">Search</button>#}
+{#								</form>#}
+{#							</div>#}
+{#							<div id="job" class="listing-form tab-pane fade">#}
+{#								<form action="#">#}
+{#									<input type="text" placeholder="Search Job" required />#}
+{#									<select name="Listselect">#}
+{#										<option value="">Job</option>#}
+{#										<option value="">Event</option>#}
+{#										<option value="">Real Estate</option>#}
+{#										<option value="">Location</option>#}
+{#										<option value="">Job</option>#}
+{#										<option value="">Hotel</option>#}
+{#										<option value="">Travel</option>#}
+{#										<option value="">Restaurant</option>#}
+{#										<option value="">Park</option>#}
+{#									</select>#}
+{#									<button type="submit">Search</button>#}
+{#								</form>#}
+{#							</div>#}
+{#							<div id="hotel" class="listing-form tab-pane fade">#}
+{#								<form action="#">#}
+{#									<input type="text" placeholder="Search Hotel" required />#}
+{#									<select name="Listselect">#}
+{#										<option value="">Hotel</option>#}
+{#										<option value="">Event</option>#}
+{#										<option value="">Real Estate</option>#}
+{#										<option value="">Location</option>#}
+{#										<option value="">Job</option>#}
+{#										<option value="">Hotel</option>#}
+{#										<option value="">Travel</option>#}
+{#										<option value="">Restaurant</option>#}
+{#										<option value="">Park</option>#}
+{#									</select>#}
+{#									<button type="submit">Search</button>#}
+{#								</form>#}
+{#							</div>#}
+{#							<div id="travel" class="listing-form tab-pane fade">#}
+{#								<form action="#">#}
+{#									<input type="text" placeholder="Search Travel" required />#}
+{#									<select name="Listselect">#}
+{#										<option value="">Travel</option>#}
+{#										<option value="">Event</option>#}
+{#										<option value="">Real Estate</option>#}
+{#										<option value="">Location</option>#}
+{#										<option value="">Job</option>#}
+{#										<option value="">Hotel</option>#}
+{#										<option value="">Travel</option>#}
+{#										<option value="">Restaurant</option>#}
+{#										<option value="">Park</option>#}
+{#									</select>#}
+{#									<button type="submit">Search</button>#}
+{#								</form>#}
+{#							</div>#}
+{#							<div id="restaurant" class="listing-form tab-pane fade">#}
+{#								<form action="#">#}
+{#									<input type="text" placeholder="Search Restaurant" required />#}
+{#									<select name="Listselect">#}
+{#										<option value="">Restaurant</option>#}
+{#										<option value="">Event</option>#}
+{#										<option value="">Real Estate</option>#}
+{#										<option value="">Location</option>#}
+{#										<option value="">Job</option>#}
+{#										<option value="">Hotel</option>#}
+{#										<option value="">Travel</option>#}
+{#										<option value="">Park</option>#}
+{#									</select>#}
+{#									<button type="submit">Search</button>#}
+{#								</form>#}
+{#							</div>#}
+{#							<div id="park" class="listing-form tab-pane fade">#}
+{#								<form action="#">#}
+{#									<input type="text" placeholder="Search Park" required />#}
+{#									<select name="Listselect">#}
+{#										<option value="">Park</option>#}
+{#										<option value="">Event</option>#}
+{#										<option value="">Real Estate</option>#}
+{#										<option value="">Location</option>#}
+{#										<option value="">Job</option>#}
+{#										<option value="">Hotel</option>#}
+{#										<option value="">Travel</option>#}
+{#										<option value="">Restaurant</option>#}
+{#										<option value="">Park</option>#}
+{#									</select>#}
+{#									<button type="submit">Search</button>#}
+{#								</form>#}
+{#							</div>#}
+{#						</div>	#}
+{#					</div>#}
+{#				</div>#}
+{#			</div>#}
+		</section>
+        <!--/Hero Area-->
+
+        <!--Nelson Area-->
+		<section class="notfound-area section-padding">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<div class="notfound-img">
+							<img src="{{ presentacion.img_seccion1.url }}" alt="" />
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<div class="notfound-content">
+							<h2 class="section-title mb-30 cl-black">{{ presentacion.titulo_seccion1 }}</h2>
+							<p class="mb-40">{{ presentacion.parrafo_seccion1 }}</p>
+							<a class="bttn btn-fill" href="index.html">Ver más</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+        {% endfor %}
+
+        <!--/Nelson Area-->
+
+		<!--Footer Area-->
+        {% for contacto in contactenos %}
+
+		<footer class="footer-area section-padding">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+						<div class="single-footer footer-subscriber">
+							<h3>{{contacto.subtitulo1}}</h3>
+							<div class="newsletter">
+								<p>{{ contacto.parrafo1 }}</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+						<div class="single-footer">
+							<h3>{{ contacto.subtitulo2 }}</h3>
+							<div class="footer-contact-info">
+								<div class="single-footer-info">
+									<i class="fas fa-map-marker-alt"></i><p>{{ contacto.direccion }}</p>
+								</div>
+								<div class="single-footer-info">
+									<i class="fas fa-phone"></i><p>{{ contacto.telefono }}</p>
+								</div>
+								<div class="single-footer-info">
+									<i class="fas fa-envelope"></i><a href="mailto:">{{ contacto.email }}</a>
+								</div>
+								<div class="single-footer-info">
+									<a href="mailto:">{{ contacto.Otro}}</a>
+								</div>
+							</div>
+						</div>
+					</div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+						<div class="single-footer footer-subscriber">
+							<h3>{{contacto.subtitulo3}}</h3>
+							<div class="newsletter">
+								<p>{{ contacto.Enlace1 }}</p>
+								<p>{{ contacto.Enlace2 }}</p>
+								<p>{{ contacto.Enlace3 }}</p>
+							</div>
+						</div>
+					</div>
+
+				</div>			
+			</div>			
+		</footer>
+        {% endfor %}
+
+		<div class="copyright-text">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col centered">
+						<p>&copy; 2020 All Rights Reserved &mdash; Created by <a href="">Yojan Styven Hernandez Cardona</a></p>
+					</div>
+				</div>	
+			</div>	
+		</div>
+        <!--/Footer Area-->
+
+		
+			
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="static/js/jquery-3.2.1.min.js"></script>
+        <script src="static/js/jquery-migrate.js"></script>
+        <script src="static/js/jquery-ui.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="static/js/popper.js"></script>
+        <script src="static/js/bootstrap.min.js"></script>
+		<script src="static/js/owl.carousel.min.js"></script>
+        
+        <script src="static/js/waypoints.min.js"></script>
+        <script src="static/js/jquery.counterup.min.js"></script>
+        <script src="static/js/scrollUp.min.js"></script>
+        <script src="static/js/wow.min.js"></script>
+        <script src="static/js/script.js"></script>
+    </body>
+</html>
