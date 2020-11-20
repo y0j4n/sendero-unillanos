@@ -6,7 +6,7 @@ from singleton_model import SingletonModel
 
 class Campus(SingletonModel):
     titulo = models.CharField(max_length=100)
-    banner = models.ImageField()
+    banner = models.ImageField(null=True,blank=True)
     titulo_seccion1 = models.CharField(max_length=250)
     parrafo_seccion1 = models.CharField(max_length=250)
     img_seccion1 = models.ImageField(blank=True, null=True)
