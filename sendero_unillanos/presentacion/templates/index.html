@@ -51,7 +51,7 @@
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <nav class="navbar navbar-expand-lg navbar-light">
-                            <a class="navbar-brand" href="index.html"><img src="{{ presentacion.logo_de_la_pagina.url }}" alt=""></a>
+                            <a class="navbar-brand" href="/"><img src="{{ presentacion.logo_de_la_pagina.url }}" alt=""></a>
                             <div class="mobile_toggle">
                                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -82,16 +82,14 @@
         <!--Nelson Area-->
         {% for presentacion in presentaciones %}
 
-            <section class="hero-area dark-overlay" style="background: url({{ presentacion.banner.url }}) no-repeat">
-                <div class="container" style="text-align: center">
-                    <div class="notfound-img">
-                        <img src="{{ presentacion.mapa.url }}" alt=""/>
-                    </div>
-                </div>
+            <section class="custom-hero dark-overlay" style="background: url({{ presentacion.banner.url }}) no-repeat">
             </section>
             <!--/Hero Area-->
+        {% endfor %}
 
         <!--Nelson Area-->
+        {% for presentacion in presentaciones %}
+
 		<section class="notfound-area section-padding">
 			<div class="container">
 				<div class="row">
@@ -103,15 +101,29 @@
 					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 						<div class="notfound-content">
 							<h2 class="section-title mb-30 cl-black">{{ presentacion.titulo_seccion1 }}</h2>
-							<p class="mb-40">{{ presentacion.parrafo_seccion1 }}</p>
-							<a class="bttn btn-fill" href="index.html">Ver más</a>
+							<p class="mb-40">{{ presentacion.parrafo1_seccion1 }}</p>
+						</div>
+					</div>
+                    <div class="col-lg-12 col-md-6 col-sm-12 col-xs-12">
+							<p class="mb-40">{{ presentacion.parrafo1_seccion1 }}</p>
+					</div>
+					<div class="col-lg-12 col-md-6 col-sm-12 col-xs-12">
+						<div class="notfound-content">
+							<h2 class="section-title mb-30 cl-black">{{ presentacion.titulo_seccion2 }}</h2>
+							<p class="mb-40">{{ presentacion.parrafo1_seccion2 }}</p>
 						</div>
 					</div>
 				</div>
 			</div>
+            <div style="text-align: center" class="col-lg-12 col-md-6 col-sm-12 col-xs-12">
+						<div class="notfound-img">
+							<img src="{{ presentacion.img_seccion2.url }}" alt="" />
+						</div>
+					</div>
+
+
 		</section>
         {% endfor %}
-
         <!--/Nelson Area-->
 
 		<!--Footer Area-->
