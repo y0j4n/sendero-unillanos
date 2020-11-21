@@ -68,8 +68,8 @@
                                 <li class="nav-item "><a class="nav-link" href="/educacion">Educacion Ambiental</a></li>
                                 <li class="nav-item "><a class="nav-link" href="/campus">Campus Universitario</a></li>
                                 <li class="nav-item "><a class="nav-link" href="/sendero">Sendero</a></li>
-                                <li class="nav-item active"><a class="nav-link" href="/galeria">Galería</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/contacto">Contacto</a></li>
+                                <li class="nav-item "><a class="nav-link" href="/galeria">Galería</a></li>
+                                <li class="nav-item active"><a class="nav-link" href="/contacto">Contacto</a></li>
                             </ul>
                         </div>
                     </nav>
@@ -78,104 +78,63 @@
         </div>
     </header>
 {% endfor %}
-
 <!-- Header Area -->
-{% for educacion in educaciones %}
 
+{% for contacto in contactenos %}
     <!--Custom Hero Area-->
-    <section class="custom-hero dark-overlay" style="background: url({{ educacion.banner.url }}) no-repeat">
+    <section class="custom-hero dark-overlay" style="background: url({{ contacto.banner.url }}) no-repeat">
+        <div class="container">
+            <div class="row cl-white">
+                <div class="col-lg-12 col-md-6" style="text-align: center;">
+                    <div class="custom-hero-title">
+                        <h2>{{ contacto.titulo }}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-
     <!--/Custom Hero Area-->
-
-    <!--Listing Details Area-->
-    <section class="listing-details-area section-padding">
-        <div class="container">
-            <div class="row mb-30">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="single-listing-gallary">
-                        <a class="popup-gallery" href="{{ educacion.img1_seccion1.url }}">
-                            <img src="{{ educacion.img1_seccion1.url }}" alt="">
-                            <i class="fas fa-search"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="single-listing-gallary">
-                        <a class="popup-gallery" href="{{ educacion.img2_seccion1.url }}">
-                            <img src="{{ educacion.img2_seccion1.url }}" alt="">
-                            <i class="fas fa-search"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="single-listing-gallary">
-                        <a class="popup-gallery" href="{{ educacion.img3_seccion1.url }}">
-                            <img src="{{ educacion.img3_seccion1.url }}" alt="">
-                            <i class="fas fa-search"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <div class="listing-details-content">
-                        <h2 class="cl-black">{{ educacion.titulo_seccion1 }}</h2>
-                        <p>{{ educacion.parrafo_seccion1 }}<br>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="notfound-area section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-6 col-sm-12 col-xs-12">
-                    <div class="notfound-content">
-                        <h2 class="section-title mb-30 cl-black">{{ educacion.titulo_seccion2 }}</h2>
-                        <p class="mb-40">{{ educacion.parrafo1_seccion2 }}</p>
-                    </div>
-                </div>
-                <div class="col-lg-12 col-md-12">
-                    <p>{{ educacion.parrafo2_seccion2 }}<br>
-                        <br>
-                        <img src="{{ educacion.img_seccion2.url }}" alt=""/>
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="notfound-area section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <div class="notfound-content">
-                        <h2 class="section-title mb-30 cl-black">{{ educacion.titulo_seccion3 }}</h2>
-                        <p class="mb-40">{{ educacion.parrafo_seccion3 }}</p>
-                        <p class="mb-40">{{ educacion.parrafo2_seccion3 }}</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <div class="notfound-img">
-                        <iframe width="550" height="400" src="https://www.youtube.com/embed/_7XMZ-nxiJY" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="col-lg-12 col-md-12">
-                    <br>
-                    <br>
-                    <img src="{{ educacion.img_seccion3.url }}" alt=""/>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
 {% endfor %}
 
-<!--/Listing Details Area-->
+
+{% for contacto in contactenos %}
+    <!--Campus Area-->
+    <section class="notfound-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                    <div class="notfound-content">
+                        <h2 class="section-title mb-30 cl-black">{{ contacto.subtitulo1 }}</h2>
+                        <p class="mb-40">{{ contacto.parrafo1 }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                    <div class="notfound-content">
+                        <h2 class="section-title mb-30 cl-black">{{ contacto.subtitulo2 }}</h2>
+                        <p class="mb-40">{{ contacto.direccion }}</p>
+                        <p class="mb-40">{{ contacto.telefono }}</p>
+                        <p class="mb-40">{{ contacto.email }}</p>
+                        <p class="mb-40">{{ contacto.otro }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                    <div class="notfound-content">
+                        <h2 class="section-title mb-30 cl-black">{{ contacto.subtitulo3 }}</h2>
+                        <p class="mb-40">{{ contacto.Enlace1 }}</p>
+                        <p class="mb-40">{{ contacto.Enlace2 }}</p>
+                        <p class="mb-40">{{ contacto.Enlace3 }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div id="map" class="add-listing-map"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/Campus Area-->
+{% endfor %}
+
+
 
 <!--Footer Area-->
 {% for contacto in contactenos %}
@@ -256,6 +215,7 @@
 <script src="static/js/magnific-popup.min.js"></script>
 <script src="static/js/scrollUp.min.js"></script>
 <script src="static/js/wow.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBi4wppP2kn3BHzI99FMCwl-wyss7Sh6qs"></script>
 <script src="static/js/script.js"></script>
 </body>
 </html>

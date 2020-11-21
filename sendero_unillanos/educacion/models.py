@@ -21,7 +21,8 @@ class Educacion(SingletonModel):
     titulo_seccion3 = models.CharField(max_length=500)
     parrafo_seccion3 = models.CharField(max_length=2000)
     img_seccion3 = models.ImageField()
-    parrafo2_seccion3 = models.CharField(max_length=500)
+    parrafo2_seccion3 = models.CharField(max_length=1000)
+    parrafo3_seccion3 = models.CharField(max_length=2000)
     banner = models.ImageField(null=True, blank=True)
 
     class Meta:
